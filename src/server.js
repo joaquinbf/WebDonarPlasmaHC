@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/perfil', (req, res) => {
-	res.send(req.params);
+	res.send('<h1> perfil </h1>');
 })
 
 
