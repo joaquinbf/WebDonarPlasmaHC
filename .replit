@@ -1,2 +1,2 @@
 language = "nodejs"
-run = ""
+run = "node ./src/index.js"
