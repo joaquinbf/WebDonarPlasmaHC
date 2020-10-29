@@ -22,13 +22,7 @@ app.set("view engine", ".hbs");
 
 /*RUTEO*/
 
-app.get('/', (req, res) => {
-	res.render('body');
-})
-
-app.get('/entrevista-dinamica', (req, res) => {
-	res.render('entrevista-dinamica');
-})
+app.use(require('./routes/index.route.js'));
 
 
 
