@@ -20,7 +20,7 @@ app.set("view engine", ".hbs");
 /*ruteo*/
 
 app.get('/', (req, res) => {
-	res.render('body');
+	res.send('hola');
 })
 
 app.get('/perfil', (req, res) => {
