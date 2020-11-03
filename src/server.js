@@ -20,11 +20,11 @@ app.engine(
 /*seteamos el motor de renderizado */
 app.set("view engine", ".hbs");
 
-/*RUTEO*/
-
+/*ruteo*/
 app.use(require('./routes/index.route.js'));
 
-
+/*carpeta publica */
+app.use(express.static(path.join(__dirname, "public")));
 
 
 module.exports = app;
