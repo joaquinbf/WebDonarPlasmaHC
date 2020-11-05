@@ -9,4 +9,5 @@ router.get('/entrevista-dinamica', render_entrevista_dinamica);
 
 router.get('/iniciar-sesion', render_iniciar_sesion);
 
+
 module.exports = router;
