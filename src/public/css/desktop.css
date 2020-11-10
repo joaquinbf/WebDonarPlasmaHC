@@ -1,12 +1,32 @@
 header {
-	background-color: var(--color-fondo);
+	background-color: var(--color-fondoEncabezado);
 	font-family: var(--fuente-texto);
+
 }
 
 a {
-	margin-left: 2rem
+	
+  text-decoration: none;
+}
+
+header a {
+color : var(--color-fuenteEncabezado);
+font-weight: 100;
 }
 
 body {
 	background-color: var(--color-fondo);
+}
+
+header>nav {
+	padding-top: 1rem; 
+	padding-right: 2rem; 
+padding-left: 2rem ;
+padding-bottom: 1rem;
+display: flex;
+  justify-content:space-between;
+}
+
+header div>a {
+  margin-left: 1rem;
 }
