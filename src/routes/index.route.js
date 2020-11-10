@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {render_body, render_entrevista_dinamica, render_iniciar_sesion} = require('../controllers/index.controller')
+const {render_index, render_entrevista, render_inicio_sesion} = require('../controllers/index.controller')
 
 /*rutas principales */
-router.get('/', render_body);
+router.get('/', render_index);
 
-router.get('/entrevista-dinamica', render_entrevista_dinamica);
+router.get('/entrevista-dinamica', render_entrevista);
 
-router.get('/iniciar-sesion', render_iniciar_sesion);
+router.get('/iniciar-sesion', render_inicio_sesion);
 
 
 module.exports = router;
