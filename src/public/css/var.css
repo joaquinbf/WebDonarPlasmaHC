@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    font-size: 16px;
+}
 
 :root {
     --color-fondo: White;
-    --fuente-texto: 'PT Serif', serif;
+    --fuente-texto: 'PT Serif', serif;;
     --color-fondoEncabezado: #34b8f8;
     --color-fuenteEncabezado: White;
+    --tamanio-maximo-cuerpo: 80rem;
 }
 
-html {
-    font-size: 16-px;
-}
