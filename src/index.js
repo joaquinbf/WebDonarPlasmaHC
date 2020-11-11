@@ -1,4 +1,5 @@
 const app = require('./server');
+const db = require('./database');
 
 /*Esta es la funcion principal*/
 app.listen(3000, () => {

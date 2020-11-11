@@ -20,8 +20,13 @@ app.engine(
 /*seteamos el motor de renderizado */
 app.set("view engine", ".hbs");
 
+/*Middedwares */
+app.use(express.urlencoded({ extended: false }));
+
 /*ruteo*/
 app.use(require('./routes/index.route.js'));
+app.use(require('./routes/entrevista.route.js'));
+app.use(require('./routes/donador.route.js'));
 
 /*carpeta publica */
 app.use(express.static(path.join(__dirname, "public")));
