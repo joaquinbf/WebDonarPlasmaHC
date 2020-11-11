@@ -1,0 +1,11 @@
+<script>
+
+function evaluar_respuesta() {
+const numPregunta = window.location.hash.split('pregunta')[1];
+console.log(numPregunta);
+const hashrespuesta = window.location.search;
+console.log(hashrespuesta);
+}
+
+window.addEventListener('hashchange', evaluar_respuesta)
+</script>
