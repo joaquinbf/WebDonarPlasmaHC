@@ -1,17 +1,482 @@
 <script>
+<script>
 const cuestionario = [
     {
-        pregunta: 'Cual es tu edad?',
+      pregunta: '¿Leyó atentamente la  información que se  encuentra  en la sala de espera?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (respuesta) {return true}
+    },
+    {
+        pregunta: '¿Ha donado sangre en las últimas 8 semanas?',
         tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'NO SE SABE',
+        validar_respuesta: function (respuesta) {return  respuesta === "si"}
+    },
+    {
+        pregunta: '¿Lo han rechazado como donante de sangre o le dijeron que no puede donar',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, ....',
+        validar_respuesta: function (respuesta) {return true}
+    },
+    {
+        pregunta: '¿Se siente bien y “sano” hoy?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, se tiene que sentir bien',
+        validar_respuesta: function (respuesta) {return  respuesta === "si"}
+    },
+    {
+        pregunta: 'Sufrió algún inconveniente con posterioridad a la donación?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'NO SE SABE',
+        validar_respuesta: function (respuesta) {return true}
+    },
+    {
+       pregunta: '¿Está tomando alguna medicación?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return  respuesta === "si"}
+    },
+    {
+       pregunta: '¿Ha tomado aspirinas o analgésicos?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return  respuesta === "si"}
+    },
+    {
+       pregunta: '¿Ha recibido tratamiento contra la Rabia?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return true}
+    },
+    {
+       pregunta: '¿Ha recibido Inmunoglobulina híper-inmune anti-hepatitis B?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return true}
+    },
+    {
+       pregunta: '¿Ha recibido vacunas?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return  respuesta === "si"}
+    },
+    {
+       pregunta: '¿Cuáles? ',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return true}
+    },
+    {
+       pregunta: '¿Cuándo?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'NO SE SABE',
+       validar_respuesta: function (respuesta) {return true}
+    },
+    {
+       pregunta: 'Ha recibido tratamiento con hormonas de crecimiento o hipofisarias o trasplante de órganos o tejidos?',
+       tipo_respuesta: 'bin',
+       justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, ....',
+       validar_respuesta: function (respuesta) {return  true}
+    },
+    {
+      pregunta: ' ¿Ha padecido alguna enfermedad grave que exigió control médico periódico?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '¿Ha padecido o padece enfermedades del corazón (infarto, angina de pecho, etc.)?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido enfermedad en los pulmones, tuberculosis o asma bronquial?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta ==='no'}
+    },
+    {
+      pregunta: '¿Está medicado?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: ' ¿Ha tenido convulsiones, desmayos, ausencias o pérdidas de conocimiento?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Padeció alguna vez de epilepsia?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Está medicado?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return  true}
+    },
+    {
+      pregunta: ' ¿Tiene antecedentes de hipertensión arterial?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Alguna vez le diagnosticaron cáncer?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Cuál? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '¿Recibió quimioterapia y/o radiaciones? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: ' ¿Se realizó alguna vez una prueba para VIH? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '  ¿Le han dicho que tiene análisis positivos para HIV-SIDA?  ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,... ',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ictericia, color amarillo de piel, hepatitis o pruebas positivas para Hepatitis o enfermedad del hígado? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,... ',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Le han dicho que tiene análisis positivos para HTLV, Chagas, Sífilis, Brucelosis? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,... ',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Ha tenido fatiga, sudoración nocturna o pérdida de peso inexplicable?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: ' ¿Ha tenido ganglios, lesiones en la piel o mucosas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '¿Presenta o presentó alguna enfermedad no mencionada? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: ' ¿Cuál? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '¿Padece diabetes y además es tratada con insulina?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Ha recibido transfusiones de sangre?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Cuándo?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true}
+    },
+    {
+      pregunta: '¿Ha tenido Malaria o Paludismo, en los últimos 3 años y recibió tratamiento, o en el último año viajó a zonas endémicas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ud.o un familiar sufre o ha sufrido Enfermedad de Creutzfeld-Jacob? O vivo entre 1980-1996en el Reino Unido?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Está embarazada?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: ' ¿Está amamantando? ',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido en el último año parto-aborto-cesárea?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Usó alguna droga ilegal inyectable, aunque sea una sola vez?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    
+    {
+      pregunta: '¿Aspiró Cocaína?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud,...',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido contacto sexual con alguien que haya estado expuesto al virus del VIH o queesté infectado con el virus del VIH, Hepatitis B o C?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha sido tratado por sífilis',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha sido tratado por gonorrea ?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha sido tratado por enfermedad venérea?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    
+    {
+      pregunta: '¿Se ha realizado tatuajes?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Se ha realizado  perforaciones en orejas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Se ha realizado perforaciones en en la piel?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Se ha realizado tratamiento con acupuntura?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido contacto accidental con sangre humana?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+     
+    {
+      pregunta: '¿Ha tenido contacto accidental con secreciones o realiza tareas que loexponen a las mismas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha realiza tareas que loexponen a las mismas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Le han realizado algún procedimiento de cirugía mayor?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Le han realizado algún procedimiento de cirugía  menor?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Le han realizado algún (implante)?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+     {
+      pregunta: '¿Le han realizado algúna laparoscopia?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Le han realizado algún endoscopia?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    
+    {
+      pregunta: '¿Ha tenido contacto sexual con una persona en plan de diálisis',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido contacto sexual con personas que reciben frecuentes transfusiones de sangre?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido contacto sexual con personas que reciben frecuentes transfusiones de componentes sanguíneos?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+   
+    {
+      pregunta: '¿Ha estado detenido en instituciones carcelarias?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha estado detenido en instituciones policiales por más de 72 horas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido relaciones sexuales de riesgo aunque sea una sola vez con distintas  mujeres/hombres?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido relaciones sexuales con varias parejas (hombres / mujeres)?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido relaciones sexuales con drogadictos/as?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido relaciones sexuales con drogadictos/as?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    
+    {
+      pregunta: '¿Ha tenido sexo por dinero ?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido sexo por drogas?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha sufrido abuso sexual?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha recibido tratamientoodontológico?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "no"}
+    },
+    {
+      pregunta: '¿Ha tenido diarrea?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "si"}
+    },
+    {
+      pregunta: '¿Ha tenido fiebre?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "si"}
+    },
+    {
+      pregunta: '¿Está donando para que le hagan la prueba del VIH?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return true }
+    },
+    {
+      pregunta: '¿Recibió dinero o algún tipo de compensación para donar?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'Lamentablemente no podrá donar sangre porque la compra o venta de sangre constituye un delito federal',
+      validar_respuesta: function (repuesta) {return respuesta === "no" }
+    },
+    {
+      pregunta: '¿Entendió todas las preguntas que se le formularon?',
+      tipo_respuesta: 'bin',
+      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      validar_respuesta: function (repuesta) {return respuesta === "si" }
+    },
+    {
+        pregunta: 'Cual es tu edad?',
+        tipo_respuesta: 'num',
         justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18',
-        validar_respuesta: function (respuesta) {return 'si' === respuesta}
+        validar_respuesta: function (edad) {return edad > 18}
     },
     {
         pregunta: 'Cual es tu peso?',
-        tipo_respuesta: 'bin',
+        tipo_respuesta: 'num',
         justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso maximo es de 100kg',
-        validar_respuesta: function (respuesta) {return 'no' === respuesta}
+        validar_respuesta: function (peso) {return peso < 100} 
     }
 ]
+
+</script>
 
 </script>
