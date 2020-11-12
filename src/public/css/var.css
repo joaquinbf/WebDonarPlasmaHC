@@ -10,6 +10,7 @@ html {
     --fuente-texto: 'PT Serif', serif;;
     --color-fondoEncabezado: #34b8f8;
     --color-fuenteEncabezado: White;
-    --tamanio-maximo-cuerpo: 80rem;
+    --tamanio-cuerpo: 80rem;
+		--tamanio-encabezado: 4rem;
 }
 
