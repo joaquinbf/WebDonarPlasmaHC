@@ -1,11 +1,17 @@
 <script>
 <script>
 const cuestionario = [
+	    {
+        pregunta: 'Cual es tu edad?',
+        tipo_respuesta: 'num',
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18',
+        validar_respuesta: function (edad) {return edad > 18}
+    },
     {
-      pregunta: '¿Leyó atentamente la  información que se  encuentra  en la sala de espera?',
-      tipo_respuesta: 'bin',
-      justificacion_ante_respuesta_invalida: 'NO SE SABE',
-      validar_respuesta: function (respuesta) {return true}
+        pregunta: 'Cual es tu peso?',
+        tipo_respuesta: 'num',
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso maximo es de 100kg',
+        validar_respuesta: function (peso) {return peso < 100} 
     },
     {
         pregunta: '¿Ha donado sangre en las últimas 8 semanas?',
@@ -61,18 +67,20 @@ const cuestionario = [
        justificacion_ante_respuesta_invalida: 'NO SE SABE',
        validar_respuesta: function (respuesta) {return  respuesta === "si"}
     },
+		/*
     {
-       pregunta: '¿Cuáles? ',
+       pregunta: '¿Que vacunas? ',
        tipo_respuesta: 'bin',
        justificacion_ante_respuesta_invalida: 'NO SE SABE',
        validar_respuesta: function (respuesta) {return true}
     },
     {
-       pregunta: '¿Cuándo?',
+       pregunta: '¿Cuándo se aplico?',
        tipo_respuesta: 'bin',
        justificacion_ante_respuesta_invalida: 'NO SE SABE',
        validar_respuesta: function (respuesta) {return true}
     },
+		*/
     {
        pregunta: 'Ha recibido tratamiento con hormonas de crecimiento o hipofisarias o trasplante de órganos o tejidos?',
        tipo_respuesta: 'bin',
@@ -428,7 +436,7 @@ const cuestionario = [
       validar_respuesta: function (repuesta) {return respuesta === "no"}
     },
     {
-      pregunta: '¿Ha recibido tratamientoodontológico?',
+      pregunta: '¿Ha recibido tratamiento odontológico?',
       tipo_respuesta: 'bin',
       justificacion_ante_respuesta_invalida: 'NO SE SABE',
       validar_respuesta: function (repuesta) {return respuesta === "no"}
@@ -457,23 +465,13 @@ const cuestionario = [
       justificacion_ante_respuesta_invalida: 'Lamentablemente no podrá donar sangre porque la compra o venta de sangre constituye un delito federal',
       validar_respuesta: function (repuesta) {return respuesta === "no" }
     },
-    {
+
+
+		{
       pregunta: '¿Entendió todas las preguntas que se le formularon?',
       tipo_respuesta: 'bin',
       justificacion_ante_respuesta_invalida: 'NO SE SABE',
       validar_respuesta: function (repuesta) {return respuesta === "si" }
-    },
-    {
-        pregunta: 'Cual es tu edad?',
-        tipo_respuesta: 'num',
-        justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18',
-        validar_respuesta: function (edad) {return edad > 18}
-    },
-    {
-        pregunta: 'Cual es tu peso?',
-        tipo_respuesta: 'num',
-        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso maximo es de 100kg',
-        validar_respuesta: function (peso) {return peso < 100} 
     }
 ]
 
