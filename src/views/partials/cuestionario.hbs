@@ -4,13 +4,13 @@ const cuestionario = [
         pregunta: 'Cual es tu edad?',
         tipo_respuesta: 'bin',
         justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18',
-        validar_respuesta: function (edad) {return edad > 18}
+        validar_respuesta: function (respuesta) {return 'si' === respuesta}
     },
     {
         pregunta: 'Cual es tu peso?',
         tipo_respuesta: 'bin',
         justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso maximo es de 100kg',
-        validar_respuesta: function (peso) {return peso < 100} 
+        validar_respuesta: function (respuesta) {return 'no' === respuesta}
     }
 ]
 
