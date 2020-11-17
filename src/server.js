@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require('./routes/index.route.js'));
 app.use(require('./routes/entrevista.route.js'));
 app.use(require('./routes/donador.route.js'));
+app.use(require('./routes/usuario.route.js'));
 
 /*carpeta publica */
 app.use(express.static(path.join(__dirname, "public")));
