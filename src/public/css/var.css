@@ -6,11 +6,21 @@ html {
 }
 
 :root {
-    --color-fondo: White;
+    --color-fondo:  White; 
     --fuente-texto: 'PT Serif', serif;;
-    --color-fondoEncabezado: #34b8f8;
-    --color-fuenteEncabezado: White;
+    --color-fondoEncabezado: #34caf8;
+    --color-fuenteEncabezado:White;
     --tamanio-cuerpo: 80rem;
 		--tamanio-encabezado: 4rem;
-}
 
+		--violeta: #31008B;
+    --azul: #0061DB;
+    --verde: #85E68F;
+    --naranja: #FFBD5;
+    --Amarillo: #FFE784;
+    --rojo: #C80000:
+}
+background-color:
+ var(--color-fondo);
+ var(--color-fondoEncabezado);
+ var(--color-fuenteEncabezado);

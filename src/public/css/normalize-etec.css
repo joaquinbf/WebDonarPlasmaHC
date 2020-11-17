@@ -6,3 +6,11 @@ a {
 body {
 	background-color: var(--color-fondo);
 }
+
+input[type=text], input[type=password] , input[type=submit]{
+  border: none;
+  background-color: white;
+  box-shadow: none;
+  background-image: none;
+
+}

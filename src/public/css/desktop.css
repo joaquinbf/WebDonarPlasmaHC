@@ -1,8 +1,11 @@
+/* contenedores */
 
 .container-grid {
 	display: grid;
 	grid-template-columns: auto var(--tamanio-cuerpo) auto;
 }
+
+ 
 
 .container{
 	grid-column-start: 2;
@@ -18,13 +21,40 @@
 	display: flex;
 
 }
+
+
+/* encabezado */
 .nav-encabezado{
 	justify-content: space-between;
-	color: black;
-	font-family: var(--fuente-texto);
-	padding-top: 1rem;
+  padding-top: 1rem;
 	padding-bottom: 1rem;
 }
+.nav-encabezado a {
+	color: black;
+	font-family: var(--fuente-texto);
+}
+
+
+
+/*inicio de sesion*/
+.section-form-inicio{
+  justify-content: space-around;
+}
+
+.form-inicio {
+	width: 50%;
+  flex-direction: column;
+	font-family: (--fuente-texto);
+  align-items: center;
+}
+
+.form-inicio input{
+  margin-bottom: 1rem;
+}
+
+
+
+
 /*
 header {
 background-color: var(--color-fondoEncabezado);
