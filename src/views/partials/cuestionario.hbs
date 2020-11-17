@@ -1,28 +1,41 @@
-<script>
+
 <script>
 const cuestionario = [
-	    {
+    {
         pregunta: 'Cual es tu edad?',
         tipo_respuesta: 'num',
-        justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18',
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, la edad minima para donar es mayor a 18 excepto que tenga entre 16 y 18, deberá tener una autorización escrita del responsable legal',
         validar_respuesta: function (edad) {return edad > 18}
     },
     {
         pregunta: 'Cual es tu peso?',
         tipo_respuesta: 'num',
-        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso maximo es de 100kg',
-        validar_respuesta: function (peso) {return peso < 100} 
+        justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso minimo es de 50kg',
+        validar_respuesta: function (peso) {return peso > 50} 
     },
-    {
+	  {
         pregunta: '¿Ha donado sangre en las últimas 8 semanas?',
         tipo_respuesta: 'bin',
-        justificacion_ante_respuesta_invalida: 'NO SE SABE',
-        validar_respuesta: function (respuesta) {return  respuesta === "si"}
+        justificacion_ante_respuesta_invalida: 'El lapso de tiempo necesario entre donaciones tiene que ser de al menos 8 semanas',
+        validar_respuesta: function (respuesta) {return  respuesta === "no"}
     },
+	   {
+        pregunta: '¿Debe realizar alguna actividad laboral o deportiva de riesgo (trabajo en altura,escalada, etc.) o conducir un vehículo de transporte público?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'Luego de la donación no puede someterse a ese tipo de actividad por riesgo de lipotimia o sincope post donacón. Caso contrario, no podrá donar ya que puede ser causa de accidente',
+        validar_respuesta: function (respuesta) {return  respuesta === "no"}
+    },
+
     {
         pregunta: '¿Lo han rechazado como donante de sangre o le dijeron que no puede donar',
         tipo_respuesta: 'bin',
         justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, ....',
+        validar_respuesta: function (respuesta) {return true}
+    },
+    {
+        pregunta: 'Sufrió algún inconveniente con posterioridad a la donación?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'NO SE SABE',
         validar_respuesta: function (respuesta) {return true}
     },
     {
@@ -32,16 +45,10 @@ const cuestionario = [
         validar_respuesta: function (respuesta) {return  respuesta === "si"}
     },
     {
-        pregunta: 'Sufrió algún inconveniente con posterioridad a la donación?',
-        tipo_respuesta: 'bin',
-        justificacion_ante_respuesta_invalida: 'NO SE SABE',
-        validar_respuesta: function (respuesta) {return true}
-    },
-    {
        pregunta: '¿Está tomando alguna medicación?',
        tipo_respuesta: 'bin',
-       justificacion_ante_respuesta_invalida: 'NO SE SABE',
-       validar_respuesta: function (respuesta) {return  respuesta === "si"}
+       justificacion_ante_respuesta_invalida: 'Los que tienen propiedades teratojenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento',
+       validar_respuesta: function (respuesta) {return true}
     },
     {
        pregunta: '¿Ha tomado aspirinas o analgésicos?',
@@ -108,7 +115,7 @@ const cuestionario = [
     {
       pregunta: '¿Está medicado?',
       tipo_respuesta: 'bin',
-      justificacion_ante_respuesta_invalida: 'NO SE SABE',
+      justificacion_ante_respuesta_invalida: '',
       validar_respuesta: function (repuesta) {return true}
     },
     {
@@ -474,7 +481,5 @@ const cuestionario = [
       validar_respuesta: function (repuesta) {return respuesta === "si" }
     }
 ]
-
-</script>
 
 </script>

@@ -1,18 +1,42 @@
 <script>
+function mensaje_respuesta_invalida(mensaje){
+		const container = document.getElementById('container-entrevista');
+		container.innerHTML = `<p class="mensaje-respuesta"> ${mensaje} </p>`;
+}
+function mensaje_alerta(mensaje){
+  	const mensajeHTML = document.createElement("p"); 
+		mensajeHTML.className += 'mensaje-alerta'; 
+		mensajeHTML.innerText = mensaje;
+		const container = document.getElementById('container-entrevista');
+		container.appendChild(mensajeHTML);
+}
+
+function siguiente_pregunta() {
+	console.log('Si aun hay preguntas en el cuestionario, hacerla. Pero si no hay preguntas, enviar al usuario al formulario de contacto')
+}
+
 function evaluar_respuesta_bin(pregunta) {
   const check_si = document.getElementById('check_si');
   const check_no = document.getElementById('check_no');
-	const esValido = false;
 	if(check_si.checked && check_no.checked) {
-		const mensaje = document.createElement("p"); 
-		mensaje.className += 'mensaje-alerta'; 
-		mensaje.innerText = "Para este tipo de pregunta, no se puede seleccionar mas de una opcion";
-		const container = document.getElementById('container-entrevista');
-		container.appendChild(mensaje);
+    mensaje_alerta('Para esta pregunta, no se puede seleccionar mas de una opcion')
+		return;
+	} 
+	if (!check_si.checked && !check_no.checked) {
+		mesaje_alerta('Para esta pregunta, es necesario seleccionar una de las opciones')
+	  return;
 	}
 
-
+	const respuesta = check_si.checked ? 'si' : 'no';
+	if(pregunta.validar_respuesta(respuesta)) {
+		siguiente_pregunta()
+	} else {
+		mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida)
+		return;
+	}
+	
 }	
+
 
 const evaluar_respuesta_tipo = {
 	bin: evaluar_respuesta_bin
