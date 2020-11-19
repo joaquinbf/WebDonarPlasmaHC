@@ -11,47 +11,58 @@ function mensaje_alerta(mensaje){
 		container.appendChild(mensajeHTML);
 }
 
-function siguiente_pregunta() {
-	console.log('Si aun hay preguntas en el cuestionario, hacerla. Pero si no hay preguntas, enviar al usuario al formulario de contacto')
+function siguiente_pregunta(id_pregunta_vieja) {
+	console.log('Si aun hay preguntas en el cuestionario, hacerla. Pero si no hay preguntas, enviar al usuario al formulario de contacto');
+	const id_pregunta = id_pregunta_vieja + 1;
+
+  if(id_pregunta >= cuestionario.length){
+	 window.location.href = '/formulario_contacto_donador'
+	} else {
+    const respuesta = document.getElementById('respuesta');
+	  const pregunta = document.getElementById('pregunta');
+		const enviar = document.getElementById('enviar')
+    enviar.href =`#${id_pregunta}`
+	  pregunta.innerText = cuestionario[id_pregunta].pregunta
+	  respuesta.innerHTML = code_pregunta[cuestionario[id_pregunta].tipo_respuesta]
+	}
 }
 
-function evaluar_respuesta_bin(pregunta) {
-  const check_si = document.getElementById('check_si');
-  const check_no = document.getElementById('check_no');
-	if(check_si.checked && check_no.checked) {
-    mensaje_alerta('Para esta pregunta, no se puede seleccionar mas de una opcion')
-		return;
-	} 
-	if (!check_si.checked && !check_no.checked) {
-		mesaje_alerta('Para esta pregunta, es necesario seleccionar una de las opciones')
-	  return;
-	}
-
-	const respuesta = check_si.checked ? 'si' : 'no';
+function evaluar_respuesta_bin(pregunta, id_pregunta) {
+  const respuesta = document.getElementById('opcion-bin').value.toLowerCase();
 	if(pregunta.validar_respuesta(respuesta)) {
-		siguiente_pregunta()
+		siguiente_pregunta(id_pregunta)
 	} else {
 		mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida)
-		return;
 	}
 	
 }	
-
+function evaluar_respuesta_num(pregunta, id_pregunta){
+    const respuesta = parseInt(document.getElementById('numero').value);
+  console.log(respuesta)
+	if(pregunta.validar_respuesta(respuesta)) {
+		siguiente_pregunta(id_pregunta)
+	} else {
+		mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida)
+	}
+}
 
 const evaluar_respuesta_tipo = {
-	bin: evaluar_respuesta_bin
+	bin: evaluar_respuesta_bin,
+	num: evaluar_respuesta_num
 }
 
 function cargar_pregunta() {
+  const respuesta = document.getElementById('respuesta');
 	const pregunta = document.getElementById('pregunta');
 	pregunta.innerText = cuestionario[0].pregunta
+	respuesta.innerHTML = code_pregunta[cuestionario[0].tipo_respuesta]
 }
 
 function evaluar_respuesta() {
-	const num_pregunta = parseInt(location.hash.split("#")[1]);
-	const pregunta = cuestionario[num_pregunta]
+	const id_pregunta = parseInt(location.hash.split("#")[1]);
+	const pregunta = cuestionario[id_pregunta]
 	const evaluacion = evaluar_respuesta_tipo[pregunta.tipo_respuesta]
-	evaluacion(pregunta);
+	evaluacion(pregunta, id_pregunta);
 }
 
 

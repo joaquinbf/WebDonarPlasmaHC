@@ -1,6 +1,28 @@
 
 <script>
+const code_pregunta ={
+	/*cambiar code para bin por etiqueta select*/
+    bin: `<select name="opcion-bin" id="opcion-bin">
+    <option value="Si">Si</option>
+    <option value="No">No</option>
+    </select>`,
+		num: `<input id= "numero" type="number" name="numero" min="0">`
+    
+}
+
 const cuestionario = [
+	 {
+        pregunta: '¿Ha donado sangre en las últimas 8 semanas?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'El lapso de tiempo necesario entre donaciones tiene que ser de al menos 8 semanas',
+        validar_respuesta: function (respuesta) {return  respuesta === "no"}
+    },
+	   {
+        pregunta: '¿Debe realizar alguna actividad laboral o deportiva de riesgo (trabajo en altura,escalada, etc.) o conducir un vehículo de transporte público?',
+        tipo_respuesta: 'bin',
+        justificacion_ante_respuesta_invalida: 'Luego de la donación no puede someterse a ese tipo de actividad por riesgo de lipotimia o sincope post donación. Caso contrario, no podrá donar ya que puede ser causa de accidente',
+        validar_respuesta: function (respuesta) {return  respuesta === "no"}
+    },
     {
         pregunta: 'Cual es tu edad?',
         tipo_respuesta: 'num',
@@ -13,19 +35,6 @@ const cuestionario = [
         justificacion_ante_respuesta_invalida: 'Lamentablemente, por cuestiones de salud, el peso minimo es de 50kg',
         validar_respuesta: function (peso) {return peso > 50} 
     },
-	  {
-        pregunta: '¿Ha donado sangre en las últimas 8 semanas?',
-        tipo_respuesta: 'bin',
-        justificacion_ante_respuesta_invalida: 'El lapso de tiempo necesario entre donaciones tiene que ser de al menos 8 semanas',
-        validar_respuesta: function (respuesta) {return  respuesta === "no"}
-    },
-	   {
-        pregunta: '¿Debe realizar alguna actividad laboral o deportiva de riesgo (trabajo en altura,escalada, etc.) o conducir un vehículo de transporte público?',
-        tipo_respuesta: 'bin',
-        justificacion_ante_respuesta_invalida: 'Luego de la donación no puede someterse a ese tipo de actividad por riesgo de lipotimia o sincope post donación. Caso contrario, no podrá donar ya que puede ser causa de accidente',
-        validar_respuesta: function (respuesta) {return  respuesta === "no"}
-    },
-
     {
         pregunta: '¿Lo han rechazado como donante de sangre o le dijeron que no puede donar',
         tipo_respuesta: 'bin',
@@ -165,7 +174,7 @@ const cuestionario = [
        justificacion_ante_respuesta_invalida: 'NO SE SABE',
        validar_respuesta: function (respuesta) {return  respuesta === "si"}
     },
-		/*
+		/* preguntas que quedan por analizar
     {
        pregunta: '¿Que vacunas? ',
        tipo_respuesta: 'bin',
@@ -571,6 +580,7 @@ const cuestionario = [
       justificacion_ante_respuesta_invalida: 'NO SE SABE',
       validar_respuesta: function (repuesta) {return respuesta === "si" }
     }
+		
 ]
 
 </script>
