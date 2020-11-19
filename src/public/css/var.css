@@ -2,25 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 :root {
-    --color-fondo:  White; 
-    --fuente-texto: 'PT Serif', serif;;
-    --color-fondoEncabezado: #34caf8;
-    --color-fuenteEncabezado:White;
-    --tamanio-cuerpo: 80rem;
-		--tamanio-encabezado: 4rem;
-
-		--violeta: #31008B;
-    --azul: #0061DB;
-    --verde: #85E68F;
-    --naranja: #FFBD5;
-    --Amarillo: #FFE784;
-    --rojo: #C80000:
+	--fuente-texto: 'PT Serif', serif;;
+	--violeta: #31008B;
+	--azul: #0061DB;
+	--verde: #85E68F;
+	--naranja: #FFBD5;
+	--Amarillo: #FFE784;
+	--rojo: #C80000:
 }
-background-color:
- var(--color-fondo);
- var(--color-fondoEncabezado);
- var(--color-fuenteEncabezado);
+
