@@ -15,6 +15,11 @@ const donador_schema = new Schema({
     },
     email:{
         type:String,
+        required:true,
+        unique:true
+    },
+    tipo_donador:{
+        type:String,
         required:true
     },
 
