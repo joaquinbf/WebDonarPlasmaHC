@@ -1,6 +1,5 @@
 
-<script>
-const code_pregunta ={
+const code_pregunta = {
     bin: `<select name="opcion-bin" id="opcion-bin">
     <option value="Si">Si</option>
     <option value="No">No</option>
@@ -581,5 +580,3 @@ const cuestionario = [
     }
 		
 ]
-
-</script>
