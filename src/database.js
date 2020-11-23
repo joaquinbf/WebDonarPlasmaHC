@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const MONGODB_URI = "mongodb+srv://admin-mdatabase:nx3QpjCLU0G1QlBc@mdatabase.wrbsk.mongodb.net/HDC?retryWrites=true&w=majority";
+const config = require("./config/config");
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(config.dburi, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -9,3 +9,4 @@ mongoose
   })
   .then((db) => console.log("Mongodb is connected to", db.connection.host))
   .catch((err) => console.error(err));
+
