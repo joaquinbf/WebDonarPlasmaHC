@@ -1,6 +1,14 @@
 const usuario_route = {}
 const Usuario = require("../models/Usuario")
 
+usuario_route.render_iniciar_usuario = (req, res) => {
+  res.render('inicio_sesion');
+}
+
+usuario_route.iniciar_usuario = (req, res) => {
+  res.send('inicio_sesion');
+}
+
 usuario_route.agregar_usuario = async (req, res) => {
     const usuario = {
 			nombre: 'jefa',
