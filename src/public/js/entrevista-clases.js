@@ -11,7 +11,6 @@ class Entrevista {
               pregunta.pregunta,
               pregunta.justificacion_ante_respuesta_invalida,
               pregunta.validar_respuesta,
-              this
             )
           );
           break;
@@ -50,12 +49,11 @@ class Entrevista {
 }
 
 class Pregunta {
-  constructor(idPregunta, pregunta, justificacion, check, cuestionario) {
+  constructor(idPregunta, pregunta, justificacion, check) {
     this.idPregunta = idPregunta;
     this.pregunta = pregunta;
     this.justificacion = justificacion;
     this.check = check;
-    this.cuestionario = cuestionario;
   }
 
   preguntar() {
@@ -74,8 +72,8 @@ class Pregunta {
 }
 
 class PreguntaSiNo extends Pregunta {
-  constructor(idPregunta, pregunta, justificacion, check, cuestionario) {
-    super(idPregunta, pregunta, justificacion, check, cuestionario);
+  constructor(idPregunta, pregunta, justificacion, check) {
+    super(idPregunta, pregunta, justificacion, check);
   }
 
   preguntar() {
@@ -94,8 +92,8 @@ class PreguntaSiNo extends Pregunta {
 }
 
 class PreguntaNumerica extends Pregunta {
-  constructor(idPregunta, pregunta, justificacion, check, cuestionario) {
-    super(idPregunta, pregunta, justificacion, check, cuestionario);
+  constructor(idPregunta, pregunta, justificacion, check) {
+    super(idPregunta, pregunta, justificacion, check);
   }
 
   preguntar() {

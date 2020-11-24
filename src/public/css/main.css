@@ -1,49 +1,9 @@
-/* contenedores */
-
-.container-grid {
-  display: grid;
-  grid-template-columns: auto 80rem auto;
+.navbar-custom {
+  background-color: var(--violeta);
 }
-
-.container{
-  grid-column-start: 2;
-  grid-column-end: 3;
+header {
+  background-color: var(--violeta);
 }
-
-.container-fluid{
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
-
-
-/* encabezado */
-.encabezado>nav{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.encabezado a {
-  color: black;
-  font-family: var(--fuente-texto);
-}
-
-
-
-/*inicio de sesion*/
-.section-inicio-sesion{
-  display: flex;
-  justify-content: space-around;
-}
-
-.section-inicio-sesion form {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  font-family: (--fuente-texto);
-}
-
-.section-inicio-sesion input{
-  margin-bottom: 1rem;
+.navbar-custom a {
+  color: white;
 }
