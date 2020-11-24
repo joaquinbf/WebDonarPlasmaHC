@@ -3,6 +3,7 @@ const app = express();
 const exphbs = require("express-handlebars");
 const path = require("path");
 const config = require("./config/config");
+const flash = require('connect-flash')
 
 /*CONFIGURACION*/
 /* establecer la carpeta views como carpeta de interfaces graficas */
@@ -28,6 +29,13 @@ app.set("view engine", ".hbs");
 
 /*Middedwares */
 app.use(express.urlencoded({ extended: false }));
+app.use(flash())
+/*variables globales*/
+app.use((req,res,next)=>{
+
+  res.locals.mensaje_exitoso = req.flash("mensaje_exitoso");
+  res.locals.mensaje_errores = req.flash("mensaje_errores")
+})
 
 /*ruteo*/
 app.use(require("./routes/index.route.js"));
