@@ -14,7 +14,7 @@ function siguiente_pregunta(id_pregunta_vieja) {
   const id_pregunta = id_pregunta_vieja + 1;
 
   if (id_pregunta >= cuestionario.length) {
-    window.location.href = "/formulario_contacto_donador";
+    window.location.href = "/agregar_donador";
   } else {
     const respuesta = document.getElementById("respuesta");
     const pregunta = document.getElementById("pregunta");
@@ -34,6 +34,7 @@ function evaluar_respuesta_bin(pregunta, id_pregunta) {
     mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida);
   }
 }
+
 function evaluar_respuesta_num(pregunta, id_pregunta) {
   const respuesta = parseInt(document.getElementById("numero").value);
   if (pregunta.validar_respuesta(respuesta)) {
