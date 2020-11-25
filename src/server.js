@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const path = require("path");
-const config = require("./config/config");
-const flash = require('connect-flash')
+const flash = require("connect-flash");
+const session = require("express-session");
 
 /*CONFIGURACION*/
 /* establecer la carpeta views como carpeta de interfaces graficas */
@@ -27,15 +27,22 @@ app.engine(
 /*seteamos el motor de renderizado */
 app.set("view engine", ".hbs");
 
-/*Middedwares */
+/* Middlewares */
 app.use(express.urlencoded({ extended: false }));
-app.use(flash())
+app.use(
+  session({
+    secret: "secret",
+    resave: "true",
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
 /*variables globales*/
-app.use((req,res,next)=>{
-
+app.use((req, res, next) => {
   res.locals.mensaje_exitoso = req.flash("mensaje_exitoso");
-  res.locals.mensaje_errores = req.flash("mensaje_errores")
-})
+  res.locals.mensaje_errores = req.flash("mensaje_errores");
+  next();
+});
 
 /*ruteo*/
 app.use(require("./routes/index.route.js"));
@@ -46,4 +53,3 @@ app.use(require("./routes/usuario.route.js"));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 module.exports = app;
-
