@@ -1,67 +1,112 @@
-function mensaje_respuesta_invalida(mensaje) {
-  const container = document.getElementById("container-entrevista");
-  container.innerHTML = `<p class="mensaje-respuesta"> ${mensaje} </p>`;
-}
-function mensaje_alerta(mensaje) {
-  const mensajeHTML = document.createElement("p");
-  mensajeHTML.className += "mensaje-alerta";
-  mensajeHTML.innerText = mensaje;
-  const container = document.getElementById("container-entrevista");
-  container.appendChild(mensajeHTML);
-}
+class Entrevista {
+  constructor() {
+    this.preguntas = [];
+    for (let idPregunta = 0; idPregunta < cuestionario.length; idPregunta++) {
+      const pregunta = cuestionario[idPregunta];
+      switch (pregunta.tipo_respuesta) {
+        case "bin":
+          this.preguntas.push(
+            new PreguntaSiNo(
+              idPregunta,
+              pregunta.pregunta,
+              pregunta.justificacion_ante_respuesta_invalida,
+              pregunta.validar_respuesta,
+            )
+          );
+          break;
+        case "num":
+          this.preguntas.push(
+            new PreguntaNumerica(
+              idPregunta,
+              pregunta.pregunta,
+              pregunta.justificacion_ante_respuesta_invalida,
+              pregunta.validar_respuesta
+            )
+          );
+          break;
+      }
+    }
 
-function siguiente_pregunta(id_pregunta_vieja) {
-  const id_pregunta = id_pregunta_vieja + 1;
+    this.preguntas[0].preguntar();
 
-  if (id_pregunta >= cuestionario.length) {
-    window.location.href = "/agregar_donador";
-  } else {
-    const respuesta = document.getElementById("respuesta");
-    const pregunta = document.getElementById("pregunta");
-    const enviar = document.getElementById("enviar");
-    enviar.href = `#${id_pregunta}`;
-    pregunta.innerText = cuestionario[id_pregunta].pregunta;
-    respuesta.innerHTML =
-      code_pregunta[cuestionario[id_pregunta].tipo_respuesta];
+    /*binding methods */
+    this.evaluarRespuesta = this.evaluarRespuesta.bind(this);
+  }
+
+  evaluarRespuesta() {
+    const idPregunta = parseInt(location.hash.split("#")[1]);
+    const respuestaCorrecta = this.preguntas[idPregunta].checkRespuesta();
+    if (respuestaCorrecta) {
+      if (idPregunta + 1 < this.preguntas.length) {
+        this.preguntas[idPregunta + 1].preguntar();
+      } else {
+        window.location.href = "/agregar_donador";
+      }
+    } else {
+      this.preguntas[idPregunta].justificar();
+    }
   }
 }
 
-function evaluar_respuesta_bin(pregunta, id_pregunta) {
-  const respuesta = document.getElementById("opcion-bin").value.toLowerCase();
-  if (pregunta.validar_respuesta(respuesta)) {
-    siguiente_pregunta(id_pregunta);
-  } else {
-    mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida);
+class Pregunta {
+  constructor(idPregunta, pregunta, justificacion, check) {
+    this.idPregunta = idPregunta;
+    this.pregunta = pregunta;
+    this.justificacion = justificacion;
+    this.check = check;
+  }
+
+  preguntar() {
+    const nodoPregunta = document.getElementById("pregunta");
+    const nodoEnviar = document.getElementById("enviar");
+    nodoPregunta.innerText = this.pregunta;
+    nodoEnviar.href = `#${this.idPregunta}`;
+  }
+
+  justificar() {
+    const entrevistaNodo = document.getElementById("container-entrevista");
+    entrevistaNodo.innerHTML = `<p class="mensaje-respuesta"> ${this.justificacion} </p>`;
+  }
+
+  checkRespuesta() {}
+}
+
+class PreguntaSiNo extends Pregunta {
+  constructor(idPregunta, pregunta, justificacion, check) {
+    super(idPregunta, pregunta, justificacion, check);
+  }
+
+  preguntar() {
+    super.preguntar();
+    const nodoRespuesta = document.getElementById("respuesta");
+    nodoRespuesta.innerHTML = `<select name="opcion-bin" id="opcion-bin">
+    <option value="Si">Si</option>
+    <option value="No">No</option>
+    </select>`;
+  }
+
+  checkRespuesta() {
+    const respuesta = document.getElementById("opcion-bin").value.toLowerCase();
+    return this.check(respuesta);
   }
 }
 
-function evaluar_respuesta_num(pregunta, id_pregunta) {
-  const respuesta = parseInt(document.getElementById("numero").value);
-  if (pregunta.validar_respuesta(respuesta)) {
-    siguiente_pregunta(id_pregunta);
-  } else {
-    mensaje_respuesta_invalida(pregunta.justificacion_ante_respuesta_invalida);
+class PreguntaNumerica extends Pregunta {
+  constructor(idPregunta, pregunta, justificacion, check) {
+    super(idPregunta, pregunta, justificacion, check);
+  }
+
+  preguntar() {
+    super.preguntar();
+    const nodoRespuesta = document.getElementById("respuesta");
+    nodoRespuesta.innerHTML = `<input id= "numero" type="number" name="numero" min="0">`;
+  }
+
+  checkRespuesta() {
+    const respuesta = parseInt(document.getElementById("numero").value);
+    return this.check(respuesta);
   }
 }
 
-const evaluar_respuesta_tipo = {
-  bin: evaluar_respuesta_bin,
-  num: evaluar_respuesta_num,
-};
-
-function cargar_pregunta() {
-  const respuesta = document.getElementById("respuesta");
-  const pregunta = document.getElementById("pregunta");
-  pregunta.innerText = cuestionario[0].pregunta;
-  respuesta.innerHTML = code_pregunta[cuestionario[0].tipo_respuesta];
-}
-
-function evaluar_respuesta() {
-  const id_pregunta = parseInt(location.hash.split("#")[1]);
-  const pregunta = cuestionario[id_pregunta];
-  const evaluacion = evaluar_respuesta_tipo[pregunta.tipo_respuesta];
-  evaluacion(pregunta, id_pregunta);
-}
-
-window.addEventListener("load", cargar_pregunta);
-window.addEventListener("hashchange", evaluar_respuesta);
+const entrevista = new Entrevista();
+window.addEventListener("hashchange", entrevista.evaluarRespuesta);

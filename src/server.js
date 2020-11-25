@@ -39,8 +39,8 @@ app.use(
 app.use(flash());
 /*variables globales*/
 app.use((req, res, next) => {
-  res.locals.mensaje_exitoso = req.flash("mensaje_exitoso");
-  res.locals.mensaje_errores = req.flash("mensaje_errores");
+  res.locals.mensajeExito = req.flash("mensaje_exitoso");
+  res.locals.mensajeError = req.flash("mensaje_errores");
   next();
 });
 

@@ -1,14 +1,12 @@
-const index_route = {}
+const rutaIndex = {};
 
 /* render de rutas principales */
-index_route.render_index = (req, res) => {
-	res.render('index');
-}
+rutaIndex.renderIndex = function (req, res) {
+  res.render('index');
+};
 
-index_route.render_entrevista = (req, res) => {
-	res.render('entrevista');
-}
+rutaIndex.renderEntrevista = function (req, res) {
+  res.render('entrevista');
+};
 
-
-
-module.exports = index_route;
+module.exports = rutaIndex;

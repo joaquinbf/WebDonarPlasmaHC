@@ -1,11 +1,12 @@
 const express = require('express');
-const router = express.Router();
-const {render_index, render_entrevista, render_inicio_sesion} = require('../controllers/index.controller')
+const rutaIndex = express.Router();
+const {
+  renderIndex,
+  renderEntrevista,
+} = require('../controllers/index.controller');
 
-/*rutas principales */
-router.get('/', render_index);
-router.get('/entrevista', render_entrevista);
+/*rutaIndexs principales */
+rutaIndex.get('/', renderIndex);
+rutaIndex.get('/entrevista', renderEntrevista);
 
-
-
-module.exports = router;
+module.exports = rutaIndex;
