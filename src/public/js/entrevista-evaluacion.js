@@ -1,3 +1,11 @@
+const code_pregunta = {
+  bin: `<select class= class="form-control" name="opcion-bin" id="opcion-bin">
+    <option value="Si">Si</option>
+    <option value="No">No</option>
+    </select>`,
+  num: `<input class="form-control" id= "numero" type="number" name="numero" min="0">`,
+};
+
 class Entrevista {
   constructor() {
     this.preguntas = [];
@@ -79,10 +87,7 @@ class PreguntaSiNo extends Pregunta {
   preguntar() {
     super.preguntar();
     const nodoRespuesta = document.getElementById("respuesta");
-    nodoRespuesta.innerHTML = `<select name="opcion-bin" id="opcion-bin">
-    <option value="Si">Si</option>
-    <option value="No">No</option>
-    </select>`;
+    nodoRespuesta.innerHTML = code_pregunta.bin;
   }
 
   checkRespuesta() {
@@ -99,7 +104,7 @@ class PreguntaNumerica extends Pregunta {
   preguntar() {
     super.preguntar();
     const nodoRespuesta = document.getElementById("respuesta");
-    nodoRespuesta.innerHTML = `<input id= "numero" type="number" name="numero" min="0">`;
+    nodoRespuesta.innerHTML = code_pregunta.num;
   }
 
   checkRespuesta() {

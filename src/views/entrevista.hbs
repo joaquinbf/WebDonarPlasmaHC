@@ -1,12 +1,17 @@
 <!--formulario de entrevista-->
-<div id="container-entrevista">
-  <p id="pregunta"> pregunta </p>
+<section class="container mt-4" >
+<div class="row justify-content">
+<div id="container-entrevista" class="col-md-4 mx-auto" style="background-color: var(--violeta)" >
+	<div style="display: flex; flex-direction: column; align-items: center;" >
+  <p id="pregunta" class="text-white"> pregunta  </p>
   <div id="respuesta">
     <label for="check-si"><input id= "check_si" type="checkbox" name="check-si">Si</label>
     <label for="check-no"><input id="check_no" type="checkbox" name="check-no">No</label>
   </div>
-  <a id='enviar' href="#0">Enviar</a>
+  <a class= "btn btn-outline-warning text-yellow" id='enviar' href="#0">Enviar</a>
+	</div>
 </div>
-
+</div>
+</section>
 <script src="/public/js/entrevista-cuestionario.js"></script>
 <script src="/public/js/entrevista-evaluacion.js"></script>
