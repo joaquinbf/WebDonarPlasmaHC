@@ -6,6 +6,7 @@ passport.use(
   new LocalStrategy(
     {
       usernameField: 'user',
+			passwordField: 'password',
     },
     async function (user, password, done) {
       const usuario = await Usuario.findOne({ user: user });
@@ -16,7 +17,7 @@ passport.use(
       } else {
         const match = await usuario.comparar_password(password);
         if (match) {
-          return done(null, user);
+          return done(null, usuario);
         } else {
           return done(null, false, {
             message: 'Nombre de usuarios o contraseña incorrecto',

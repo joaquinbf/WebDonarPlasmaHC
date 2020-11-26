@@ -4,6 +4,8 @@ const exphbs = require("express-handlebars");
 const path = require("path");
 const flash = require("connect-flash");
 const session = require("express-session");
+const passport = require("passport");
+const config = require("./config/passport")
 
 /*CONFIGURACION*/
 /* establecer la carpeta views como carpeta de interfaces graficas */
@@ -36,11 +38,13 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 /*variables globales*/
 app.use((req, res, next) => {
-  res.locals.mensajeExito = req.flash("mensaje_exitoso");
-  res.locals.mensajeError = req.flash("mensaje_errores");
+  res.locals.sesionExitosa = req.flash("sesion_exitosa");
+  res.locals.sesionDenegada = req.flash("sesion_denegada");
   next();
 });
 

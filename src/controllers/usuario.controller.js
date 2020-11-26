@@ -1,13 +1,20 @@
 const rutaUsuario = {};
 const Usuario = require('../models/Usuario');
+const passport = require('passport')
 
 rutaUsuario.renderIniciarSesionForm = function (req, res) {
   res.render('inicio_sesion');
 };
 
-rutaUsuario.iniciarSesion = function (req, res) {
-  res.send('inicio_sesion');
-};
+rutaUsuario.renderSesionIniciada = function (req, res) {
+  res.send ("Sesion Iniciada")
+}
+
+rutaUsuario.iniciarSesion = passport.authenticate ('local', {
+ successRedirect: '/usuario/sesionIniciada',
+ failureRedirect: '/usuario/iniciarSesion',
+ failureFlash: true
+})
 
 rutaUsuario.agregarUsuario = async function (req, res) {
   const usuario = {
