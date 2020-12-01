@@ -1,21 +1,14 @@
-<table>
+
+<section class="container">
+  <table class="table">
     <thead>
         <tr>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Apellido
-            </th>
-            <th>
-                Telefono
-            </th>
-            <th>
-                Correo electronico
-            </th>
-            <th>
-                Tipo donador
-            </th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Correo electronico</th>
+      <th scope="col">Tipo donador</th>
+      <th scope="col">Fue contactado</th>
         </tr>
     </thead>
     <tbody>
@@ -36,7 +29,11 @@
             <td>
                 {{tipo_donador}}
             </td>
+            <td>
+              {{contactado}}
+            </td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+</section>

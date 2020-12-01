@@ -1,7 +1,18 @@
 <section class="container">
+
+  <div class="navbar-nav" id="navbarSupportedContent" style="width=auto;">
+        <a class="fixed-bottom"</a>
+        <a class= "btn btn-outline-warning text-yellow" href="/entrevista">Quiero Donar</a>
+      </div>
+      
+</section>
+
+<section class="container">
+  
     <h4>
         condiciones basicas para ser donador
     </h4>
+    
     <div class="row">
         <div class="col-4">
             <img src="" alt="">
@@ -51,4 +62,30 @@
 
 
     </div>
+    <section class="container">
+
+    <form action="/donador/agregar" method="POST">
+    <select name="tipo_donador" id="">
+      
+      <option value="donador_sangre">
+        donador de sangre
+      </option>
+      <option value="donador_plasma">
+        donador de plasma
+      </option>
+    
+    </select>
+    
+    <input type="text" placeholder="Nombre" id="nombre" name="nombre">
+
+    <input type="text" placeholder="Apellido" id="apellido" name="apellido">
+
+    <input type="text" placeholder="Telefono" id="telefono" name="telefono">
+
+    <input type="email" name="email" placeholder="Por ejemplo, stitch@dominio.com">
+
+    <input type="submit" value="send">
+  </form>
+
+  </section>
 </section>
