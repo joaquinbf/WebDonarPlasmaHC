@@ -9,6 +9,15 @@ rutaUsuario.renderIniciarSesionForm = function (req, res) {
 rutaUsuario.renderSesionIniciada = function (req, res) {
   res.send ("Sesion Iniciada")
 }
+rutaUsurio.renderAgregarUsuario = function (req, res ){
+  res.send("Agrgar Usuario")
+}
+
+rutaUsurio.renderActualizarUsuario = function (req, res){
+  res.send("Actualizar Usuario")
+}
+
+
 
 rutaUsuario.iniciarSesion = passport.authenticate ('local', {
  successRedirect: '/usuario/sesionIniciada',

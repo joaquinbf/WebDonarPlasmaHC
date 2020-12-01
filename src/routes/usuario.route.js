@@ -8,9 +8,13 @@ const {
 	renderSesionIniciada
 } = require('../controllers/usuario.controller');
 
-router.get('/usuario/agregar', agregarUsuario);
+
 router.get('/usuario/iniciarSesion', renderIniciarSesionForm);
 router.post('/usuario/iniciarSesion', iniciarSesion);
 router.get('/usuario/sesionIniciada', renderSesionIniciada);
+router.post('/usuario/agregar', agregarUsuario);
+router.get('/usuario/agregar', renderAgregarUsuario );
+router.delete('/usuario/borrarUsuario', borrarUsuario);
+router.put('usuario/actualizarUsuario', actualizarUsuario);
 
 module.exports = router;
