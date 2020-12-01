@@ -806,4 +806,21 @@ const cuestionario = [
       return respuesta === "si";
     },
   },
+	  {
+    pregunta: "¿Es esta una pregunta encadenada?",
+    tipo_respuesta: "bin",
+    validar_respuesta: function (respuesta) {
+      return respuesta === "no";
+    },
+		preguntas: [
+			  {
+    pregunta: "¿Esta es una sub pregunta?",
+    tipo_respuesta: "bin",
+    justificacion_ante_respuesta_invalida: "NO SE SABE",
+    validar_respuesta: function (repuesta) {
+      return respuesta === "si";
+    },
+  },
+		]
+  },
 ];
