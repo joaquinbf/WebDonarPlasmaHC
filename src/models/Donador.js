@@ -23,6 +23,9 @@ const donador_schema = new Schema(
       type: String,
       required: true,
     },
+    contactado:{
+      type: Boolean,
+    },
   },
   {
     timestamps: true,
