@@ -63,7 +63,26 @@ const cuestionario = [
       return respuesta === "si";
     },
   },
+  {
+    pregunta:"¿Se ha realizado tatuajes en los últimos 12 meses?",
+    tipo_respuesta:"bin",
+    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar hasta pasado los 12 meses desde el tatuaje realizado. Sólo si hay garantía que las agujas y la tinta son de uso único podrá aceptarse la donación."
+    validar_respuesta: function(respuesta){
+      return respuesta === "si";
+    },
+  }
+  {
+    pregunta:"¿Se ha realizado piercings donde se utilizan la propia pieza, estéril, para perforar y bajo la   responsabilidad de un profesional matriculado ?",
+    tipo_respuesta:"bin"
+    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar pasado los 12 meses desde el último piercing realizado"
+    validar_respuesta: function(respuesta){
+      return respuesta === "si";
+    },
+  }
 
+  {
+
+  }
   {
     pregunta: "¿Tomó Danazol en los últimos 7 días? ",
     tipo_respuesta: "bin",
@@ -155,22 +174,48 @@ const cuestionario = [
       return respuesta === "si";
     },
   },
+
   {
     pregunta: "¿Tomó medicación para el Acné?",
-    tipo_respuesta: "bin",
-    justificacion_ante_respuesta_invalida:
-      "Lamentablemente, no podrá donar si consume/consumió las siguientes medicaciones: -Desde la última dosis de Isotretinoina (Roacutan), exclusión por un (1) mes. -Tratamiento con Acitretina (NeoTigasón), exclusión por tres (3) años",
+    tipo_respuesta: "bin-encadenada",
     validar_respuesta: function (respuesta) {
+      return respuesta === "no";
+    },
+		preguntas: [
+			  {
+    pregunta: "¿Tomó/toma Isotretinoina (Roacutan) las ultimas cuatro semanas? ",
+    tipo_respuesta: "bin",
+    justificacion_ante_respuesta_invalida: "Lamentablemente por cuestiones de salud, no podrá donar por un tiempo determinado, en este caso un (1) mes, desde la ultima dosis consumida.",
+    validar_respuesta: function (repuesta) {
+      return respuesta === "no";
+    },
+  },
+   {
+    pregunta: "¿Hizo algún tratamineto con Acitretina (NeoTigasón) en los ultimos tres años? ",
+    tipo_respuesta: "bin",
+    justificacion_ante_respuesta_invalida: "Lamentablemente por cuestiones de salud, no podrá donar por un tiempo determinado, en este caso tres (3) años, si sigue tratamineto con Acitretina.",
+    validar_respuesta: function (repuesta) {
+      return respuesta === "no";
+    },
+  },
+		]
+  },
+   {
+    pregunta: "¿Tuvo/ tiene psoriasis?",
+    tipo_respuesta: "bin-encadenada",
+    validar_respuesta: function (respuesta) {
+      return respuesta === "no";
+    },
+		preguntas: [
+			  {
+    pregunta: "¿Tomo aceci",
+    tipo_respuesta: "bin",
+    justificacion_ante_respuesta_invalida: "NO SE SABE",
+    validar_respuesta: function (repuesta) {
       return respuesta === "si";
     },
   },
-  {
-    pregunta: "¿Tomó medicación para la Soriasis?",
-    tipo_respuesta: "bin",
-    justificacion_ante_respuesta_invalida: "NO SE SABE",
-    validar_respuesta: function (respuesta) {
-      return respuesta === "si";
-    },
+		]
   },
   {
     pregunta: "¿Tomó medicación para la próstata?",

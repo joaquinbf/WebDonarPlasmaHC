@@ -73,7 +73,7 @@ class Pregunta {
 
   justificar() {
     const entrevistaNodo = document.getElementById("container-entrevista");
-    entrevistaNodo.innerHTML = `<p class="mensaje-respuesta"> ${this.justificacion} </p>`;
+    entrevistaNodo.innerHTML = `<div class="alert alert-danger alert-dismissible fade show"role="alert">${this.justificacion}</div>`;
   }
 
   checkRespuesta() {}
@@ -113,5 +113,20 @@ class PreguntaNumerica extends Pregunta {
   }
 }
 
+class PreguntaEncadenada extends Pregunta{
+  constructor(idPregunta, pregunta, justificacion, check) {
+    super(idPregunta, pregunta, justificacion, check);
+  }
+
+  preguntar() {
+    
+  }
+
+  checkRespuesta() {
+  
+  }
+}
+
 const entrevista = new Entrevista();
 window.addEventListener("hashchange", entrevista.evaluarRespuesta);
+

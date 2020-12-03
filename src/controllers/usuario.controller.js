@@ -9,11 +9,11 @@ rutaUsuario.renderIniciarSesionForm = function (req, res) {
 rutaUsuario.renderSesionIniciada = function (req, res) {
   res.send ("Sesion Iniciada")
 }
-rutaUsurio.renderAgregarUsuario = function (req, res ){
+rutaUsuario.renderAgregarUsuario = function (req, res ){
   res.send("Agrgar Usuario")
 }
 
-rutaUsurio.renderActualizarUsuario = function (req, res){
+rutaUsuario.actualizarUsuario = function (req, res){
   res.send("Actualizar Usuario")
 }
 

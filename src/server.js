@@ -43,8 +43,10 @@ app.use(passport.session());
 app.use(flash());
 /*variables globales*/
 app.use((req, res, next) => {
-  res.locals.sesionExitosa = req.flash("sesion_exitosa");
-  res.locals.sesionDenegada = req.flash("sesion_denegada");
+  res.locals.mensaje = req.flash("mensaje");
+  res.locals.mensajes = req.flash("mensajes");
+	res.locals.error = req.flash('error');
+	res.locals.errores = req.flash('errores');
   next();
 });
 
