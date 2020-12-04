@@ -1,6 +1,69 @@
 header {
   background-color: var(--violeta);
 }
-.seccionPrincipal{
-  background: 
+
+.section-condiciones img{
+  width: 64px;
+}
+
+footer img {
+	width: 32px;
+}
+
+
+.section-principal {
+position: absolute;
+
+	background-image: url('/public/img/flayerPrincipal.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+	background-color: var(--amarillo);
+	height: 60vh;
+
+	z-index: 1;
+}
+
+
+.section-btn-donar {
+	position: relative;
+		height: 60vh;
+
+ z-index: 2;
+
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ align-content: center;
+}
+
+.tarjeta-condicion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-pagina{
+  margin-top: 32px;
+}
+
+footer {
+  background-color: white
+}
+
+footer a {
+	color:black;
+}
+
+.tarjeta-material img{
+  width: 100%;
+	}
+
+.material-compartir-redes{
+ display: flex;
+}
+
+.material-compartir-redes img{
+  width: 16px;
+  margin-right: 16px;
 }

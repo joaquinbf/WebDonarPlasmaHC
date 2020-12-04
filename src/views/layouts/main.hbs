@@ -17,35 +17,47 @@
     <nav class="navbar navbar-expand-fluid container">
       <a href="/" class="nav-link text-white">Home</a>
 
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#section-btn-donar">Quiero Donar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#section-condiciones">Condiciones basicas para ser donador</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#section-material">Material para compartir</a>
+  </li>
+
+</ul>
 
 
-      <div>
-        <a class="nav-link text-yellow btn btn-outline-warning" href="/usuario/iniciarSesion">Iniciar Sesion</a>
-      </div>
     </nav>
 
   </header>
 	
-	<section class='container'>
 	{{>errores}}
 	{{>mensajes}}
   {{{body}}}
-	</section>
   
-  <footer class="container">
+  <footer class="container-fluid" class="container">
 		<ul class="nav justify-content-center">
-     <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link active" href="http://www.hospitaldeclinicas.uba.ar/"><img src="/public/icons/icono_mundo.png"> Pagina oficial del Hospital de Clinicas</a>
     </li>
-      <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link active" href="https://www.instagram.com/hospitaldeclinicasok/"><img src="/public/icons/icono_instagram.png"> Instagram oficial del Hospital de Clinicas</a>
     </li>
-          <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link active" href=""><img src="/public/icons/icono_ubicacion.png"> Av. Córdoba 2351 (C1120AAR) Ciudad Autónoma de Buenos Aires</a>
     </li>
-          <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link active" href="tel:5950-8000"><img src="/public/icons/icono_telefono.png"> 5950-8000 las 24 horas. </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/usuario/iniciarSesion"> <img src="/public/icons/iniciarsesion.png"> Uso interno para el hospital de clinicas. </a>
+    </li>
+  
+
 
    
 </ul>
