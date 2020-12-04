@@ -48,4 +48,12 @@ rutaDonador.listarDonadores = async function(req, res) {
 rutaDonador.renderAgregarDonador = function(req, res) {
 	res.render('formulario_agregar_donador');
 };
+
+rutaDonador.eliminarDonador = function(req, res) {
+	res.send('Donador Eliminado');
+};
+
+rutaDonador.actualizarDonador = function(req, res) {
+	res.send('Donador Actualizado');
+};
 module.exports = rutaDonador;
