@@ -66,23 +66,20 @@ const cuestionario = [
   {
     pregunta:"¿Se ha realizado tatuajes en los últimos 12 meses?",
     tipo_respuesta:"bin",
-    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar hasta pasado los 12 meses desde el tatuaje realizado. Sólo si hay garantía que las agujas y la tinta son de uso único podrá aceptarse la donación."
+    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar hasta pasado los 12 meses desde el tatuaje realizado. Sólo si hay garantía que las agujas y la tinta son de uso único podrá aceptarse la donación.",
     validar_respuesta: function(respuesta){
       return respuesta === "si";
     },
   }
   {
     pregunta:"¿Se ha realizado piercings donde se utilizan la propia pieza, estéril, para perforar y bajo la   responsabilidad de un profesional matriculado ?",
-    tipo_respuesta:"bin"
-    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar pasado los 12 meses desde el último piercing realizado"
+    tipo_respuesta:"bin",
+    justificacion_ante_respuesta_invalida:"Lamentablemente, por cuestiones de salud, no podrá donar pasado los 12 meses desde el último piercing realizado",
     validar_respuesta: function(respuesta){
       return respuesta === "si";
     },
   }
 
-  {
-
-  }
   {
     pregunta: "¿Tomó Danazol en los últimos 7 días? ",
     tipo_respuesta: "bin",
