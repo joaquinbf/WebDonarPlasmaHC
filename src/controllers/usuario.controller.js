@@ -10,7 +10,7 @@ rutaUsuario.renderSesionIniciada = function (req, res) {
   res.send ("Sesion Iniciada")
 }
 rutaUsuario.renderAgregarUsuario = function (req, res ){
-  res.send("Agrgar Usuario")
+  res.render("formulario_agregar_usario")
 }
 
 rutaUsuario.actualizarUsuario = function (req, res){

@@ -45,7 +45,7 @@ rutaDonador.listarDonadores = async function(req, res) {
 	}
 };
 
-rutaDonador.renderAgregarDonadorForm = function(req, res) {
-	res.render('entrevista_formulario_contacto');
+rutaDonador.renderAgregarDonador = function(req, res) {
+	res.render('formulario_agregar_donador');
 };
 module.exports = rutaDonador;
