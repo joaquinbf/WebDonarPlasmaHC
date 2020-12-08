@@ -18,15 +18,25 @@
       <a href="/" class="nav-link text-white">Home</a>
 
 <ul class="nav">
+	{{#if user}}
   <li class="nav-item">
-    <a class="nav-link active" href="#section-btn-donar">Quiero Donar</a>
+    <a class="nav-link" href="/donador/donadores">Listado de donadores</a>
   </li>
+  <li class="nav-item">
+    <a calss="nav-link" href="/usuario/agregar">Agregar nuevos usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/usuario/cerrarSesion">Cerrar Sesion</a>
+  </li>
+	{{else}}
+
   <li class="nav-item">
     <a class="nav-link" href="#section-condiciones">Condiciones basicas para ser donador</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#section-material">Material para compartir</a>
   </li>
+	{{/if}}
 
 </ul>
 

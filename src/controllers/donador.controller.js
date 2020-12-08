@@ -22,8 +22,9 @@ rutaDonador.agregarDonador = async function(req, res) {
 		console.log(donador);
 		errores.push({ text: 'Su direccion de email ya fue ingresado en el sistema.' })
 	}
+
 	if (errores.length > 0) {
-		res.render('entrevista_formulario_contacto', { errores })
+		res.render('formulario_agregar_donador', { errores })
 	} else {
 		const nuevo_donador = new Donador({
 			nombre,
