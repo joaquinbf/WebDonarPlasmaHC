@@ -1,69 +1,102 @@
+/* layout */
+body {
+  display: flex;
+  flex-direction: column;
+  height: min(100vh);
+  background-color: var(--gris);
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* encabezado */
 header {
   background-color: var(--violeta);
 }
 
-.section-condiciones img{
+/* secciones */
+.section-pagina {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 32px;
+  padding: 32px;
+}
+
+.section-pagina h2 {
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: bold;
+  color: var(--violeta);
+}
+/* seccion principal */
+.section-principal {
+  background-color: var(--violeta);
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* seccion condiciones basicas*/
+.section-condiciones img {
   width: 64px;
 }
-
-footer img {
-	width: 32px;
-}
-
-
-.section-principal {
-position: absolute;
-
-	background-image: url('/public/img/flayerPrincipal.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-
-	background-color: var(--amarillo);
-	height: 60vh;
-
-	z-index: 1;
-}
-
-
-.section-btn-donar {
-	position: relative;
-		height: 60vh;
-
- z-index: 2;
-
- display: flex;
- justify-content: flex-end;
- align-items: center;
- align-content: center;
-}
-
-.tarjeta-condicion{
+.tarjeta-condicion {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.section-pagina{
-  margin-top: 32px;
+
+.tarjeta-condicion p {
+  text-align: center;
 }
 
+/* pie de pagina */
 footer {
-  background-color: white
+  background-color: var(--gris);
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 footer a {
-	color:black;
+  color: black;
+}
+footer img {
+  width: 32px;
 }
 
-.tarjeta-material img{
+/* seccion material para compartir */
+.tarjeta-material {
+  margin-bottom: 32px;
+}
+.tarjeta-material img {
   width: 100%;
-	}
-
-.material-compartir-redes{
- display: flex;
 }
 
-.material-compartir-redes img{
-  width: 16px;
-  margin-right: 16px;
+.material-compartir-redes {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.material-compartir-redes h3 {
+  margin: 0;
+}
+
+.material-compartir-redes img {
+  width: 32px;
+  margin-left: 16px;
+}
+
+/*seccion ley*/
+
+#section-ley img {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+#section-ley p {
+  text-align: center;
 }

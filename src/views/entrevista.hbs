@@ -1,19 +1,31 @@
 <!--formulario de entrevista-->
-<section class="container">
-<div class="mt-4" >
-<div class="row justify-content">
-<div id="container-entrevista" class="col-md-4 mx-auto" style="background-color: var(--violeta)" >
-	<div style="display: flex; flex-direction: column; align-items: center;" >
-  <p id="pregunta" class="text-white"> pregunta  </p>
-  <div id="respuesta">
-    <label for="check-si"><input id= "check_si" type="checkbox" name="check-si">Si</label>
-    <label for="check-no"><input id="check_no" type="checkbox" name="check-no">No</label>
+
+<section class="container section-pagina">
+  <h2>Entrevista Dinamica</h2>
+  <h3>Estimado donante:</h3>
+  <p>Ante todo le agradecemos su solidaria concurrencia y colaboración. Nuestra principal preocupación es proteger al
+    receptor de su sangre, como también a Ud. mismo. Por lo tanto a veces nos vemos impedidos de aceptar una donación.
+    Para saber si Ud. está en condiciones de donar, le rogamos contestar responsablemente el siguiente cuestionario
+    confidencial.
+    Por favor, tenga en cuenta que el objetivo de este cuestionario al que Ud. se somete voluntariamente, no es
+    discriminatorio.
+    Tratamos de hacerle comprender que si Ud. estuvo expuesto a situaciones de riesgo que internacionalmente son
+    consideradas como posibles causas de contraer enfermedades transmisibles por sangre, no debería donar.</p>
+  <p>Resolución 1507-08-09/2015 Normas Técnicas y Administrativas de Hemoterapia. Modificación de la Resolución
+    797/2013.</p>
+</section>
+
+<section class="container section-pagina">
+  <div id="container-entrevista" class="container-form">
+    <h2 id="pregunta"> pregunta </h2>
+    <div id="respuesta" class="form-group">
+      <label for="check-si"><input id="check_si" type="checkbox" name="check-si">Si</label>
+      <label for="check-no"><input id="check_no" type="checkbox" name="check-no">No</label>
+    </div>
+    <a class="btn btn-enviar" id='enviar' href="#0">Enviar</a>
   </div>
-  <a class= "btn btn-outline-warning text-yellow" id='enviar' href="#0">Enviar</a>
-	</div>
-</div>
-</div>
-</div>
+  </div>
+</section>
+
 <script src="/public/js/entrevista-cuestionario.js"></script>
 <script src="/public/js/entrevista-evaluacion.js"></script>
-</section>

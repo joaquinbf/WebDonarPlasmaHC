@@ -1,6 +1,6 @@
 const app = require("./server");
-const db = require("./database");
 const config = require("./config/config");
+require("./database");
 
 /*Esta es la funcion principal*/
 app.listen(config.port, () => {

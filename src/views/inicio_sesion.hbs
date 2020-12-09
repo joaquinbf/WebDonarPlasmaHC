@@ -1,23 +1,22 @@
 <!--formulario para iniciar sesion-->
-	
-<section class = "container">
-<div class="row">
-  <div class="col-md-4 mx-auto">
-    <div class="card mt-4 text-center">
-      <div class="card-header">
-        <h4 class="h4">
-          Iniciar Sesion
-        </h4>
-      </div>
-      <ing src="#" alt="#" class="rounded-circle mx-auto d-block logo m-4">
-      <div class="card-body">
-          <form action="/usuario/iniciarSesion/" method="post">
-            <input type="text" id="usuario" name="user" placeholder="Introduzca aqui su usuario" class="form-control">
-            <input type="password" id="password" name="password" placeholder="Introduzca aqui su contraseña" class="form-control">
-            <input type="submit" class="form-control btn btn-outline-warning">
-          </form>
-      </div>
+
+<section class="container section-pagina">
+
+  <h2>
+    Iniciar Sesion
+  </h2>
+  <ing src="#" alt="#" />
+  <form class="container-form row" action="/usuario/iniciarSesion/" method="post">
+    <div class="form-group col-md-4">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" name="user" placeholder="Introduzca su usuario" class="form-control">
     </div>
-  </div>
-</div>
+    <div class="form-group col-md-4">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Introduzca su contraseña"
+        class="form-control">
+    </div>
+    <input type="submit" class="btn btn-enviar" value="enviar">
+  </form>
+
 </section>

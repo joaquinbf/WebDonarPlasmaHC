@@ -15,7 +15,7 @@ passport.use(
           message: 'Nombre de usuario o contraseña incorrecto.',
         });
       } else {
-        const match = await usuario.comparar_password(password);
+        const match = await usuario.compararPassword(password);
         if (match) {
           return done(null, usuario);
         } else {
@@ -33,7 +33,7 @@ passport.serializeUser(function (usuario, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-  Usuario.findById(id, function (err, user) {
-    done(err, user);
+  Usuario.findById(id, function (err, usuario) {
+    done(err, usuario);
   });
 });

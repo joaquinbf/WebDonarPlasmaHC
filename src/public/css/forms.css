@@ -1,0 +1,12 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-enviar {
+  color: white;
+  background-color: var(--violeta);
+}
+

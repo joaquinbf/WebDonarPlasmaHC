@@ -9,74 +9,82 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="/public/css/variables.css">
   <link rel="stylesheet" href="/public/css/main.css">
+  <link rel="stylesheet" href="/public/css/forms.css">
 
 </head>
 
 <body>
-  <header class="header container-fluid navbar-dark">
+  <header class="container-fluid navbar-dark">
     <nav class="navbar navbar-expand-fluid container">
-      <a href="/" class="nav-link text-white">Home</a>
+      <a href="/" class=" navbar-brand nav-link text-light">Home</a>
 
-<ul class="nav">
-	{{#if user}}
-  <li class="nav-item">
-    <a class="nav-link" href="/donador/donadores">Listado de donadores</a>
-  </li>
-  <li class="nav-item">
-    <a calss="nav-link" href="/usuario/agregar">Agregar nuevos usuarios</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/usuario/cerrarSesion">Cerrar Sesion</a>
-  </li>
-	{{else}}
+      <ul class="nav">
+        {{#if usuario}}
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/donador/donadores">Listado de donadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/usuario/agregar">Agregar nuevos usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/usuario/cerrarSesion">Cerrar Sesion</a>
+        </li>
+        {{else}}
 
-  <li class="nav-item">
-    <a class="nav-link" href="#section-condiciones">Condiciones basicas para ser donador</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#section-material">Material para compartir</a>
-  </li>
-	{{/if}}
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#section-condiciones">Condiciones basicas para ser donador</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#section-material">Material para compartir</a>
+        </li>
+        {{/if}}
 
-</ul>
-
-
+      </ul>
     </nav>
-
   </header>
-	
-	{{>errores}}
-	{{>mensajes}}
-  {{{body}}}
-  
+
+  <main>
+    {{>errores}}
+    {{>mensajes}}
+    {{{body}}}
+  </main>
+
   <footer class="container-fluid" class="container">
-		<ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="http://www.hospitaldeclinicas.uba.ar/"><img src="/public/icons/icono_mundo.png"> Pagina oficial del Hospital de Clinicas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="https://www.instagram.com/hospitaldeclinicasok/"><img src="/public/icons/icono_instagram.png"> Instagram oficial del Hospital de Clinicas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href=""><img src="/public/icons/icono_ubicacion.png"> Av. Córdoba 2351 (C1120AAR) Ciudad Autónoma de Buenos Aires</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="tel:5950-8000"><img src="/public/icons/icono_telefono.png"> 5950-8000 las 24 horas. </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/usuario/iniciarSesion"> <img src="/public/icons/iniciarsesion.png"> Uso interno para el hospital de clinicas. </a>
-    </li>
-  
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="http://www.hospitaldeclinicas.uba.ar/"><img
+            src="/public/icons/icono_mundo.png"> Pagina oficial del Hospital de Clinicas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="https://www.instagram.com/hospitaldeclinicasok/"><img
+            src="/public/icons/icono_instagram.png"> Instagram oficial del Hospital de Clinicas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href=""><img src="/public/icons/icono_ubicacion.png"> Av. Córdoba 2351 (C1120AAR)
+          Ciudad Autónoma de Buenos Aires</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="tel:5950-8000"><img src="/public/icons/icono_telefono.png"> 5950-8000 las 24
+          horas. </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/usuario/iniciarSesion"> <img src="/public/icons/iniciarsesion.png"> Uso
+          interno para el hospital de clinicas. </a>
+      </li>
+    </ul>
 
 
-   
-</ul>
+  </footer>
 
-    
-    </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
 </body>
 

@@ -1,17 +1,17 @@
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 :root {
-	--fuente-texto: 'PT Serif', serif;;
-	--violeta: #31008B;
-	--azul: #0061DB;
-	--verde: #85E68F;
-	--naranja: #FFBD5;
-	--amarillo: #FFE784;
-	--rojo: #C80000:
+  --fuente-texto: 'PT Serif', serif;
+  --violeta: #31008b;
+  --azul: #0061db;
+  --verde: #85e68f;
+  --naranja: #FFBD5;
+  --amarillo: #ffe784;
+  --rojo: #c80000;
+  --rosa: #e3c7ed;
+  --gris: #f7f7f7;
 }
-
