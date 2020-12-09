@@ -1,26 +1,42 @@
-<section class="container section-pagina" >
-  
-	<form action="/donador/agregar" method="POST">
-    <select name="tipo_donador" id="">
-      
-      <option value="Donador de Sangre">
-        Donador de sangre
-      </option>
-      <option value="Donador de Plasma">
-        Donador de plasma
-      </option>
-    
-    </select>
-    
-    <input type="text" placeholder="Nombre" id="nombre" name="nombre">
+<section class="container section-pagina">
+  <h2>Formulario de contacto</h2>
+  <form action="/donador/agregar" method="POST" class="container-form">
+    <div class="row">
 
-    <input type="text" placeholder="Apellido" id="apellido" name="apellido">
+      <div class="form-group col-md-4">
+        <label for="tipo_donador">¿A que tipo de donador vas a postular?</label>
+        <select name="tipo_donador" id="tipo_donador" class="form-control">
+          <option value="Donador de Sangre">
+            Donador de sangre
+          </option>
+          <option value="Donador de Plasma">
+            Donador de plasma
+          </option>
+        </select>
+      </div>
 
-    <input type="text" placeholder="Telefono" id="telefono" name="telefono">
+      <div class="form-group col-md-4">
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Por ejemplo: Juan" id="nombre" name="nombre" class="form-control">
+      </div>
 
-    <input type="email" name="email" placeholder="Por ejemplo, stitch@dominio.com">
+      <div class="form-group col-md-4">
+        <label for="apellido">Apellido</label>
+        <input type="text" placeholder="Por ejemplo: Perez" id="apellido" name="apellido" class="form-control">
+      </div>
 
-    <input type="submit" value="Enviar">
+      <div class="form-group col-md-4">
+        <label for="telefono">Telefono</label>
+        <input type="tel" placeholder="(Codigo de area) Numero" id="telefono" name="telefono" class="form-control">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Correo electronico</label>
+        <input type="email" name="email" placeholder="Por ejemplo, ejenplo@gmail.com" class="form-control">
+      </div>
+
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-enviar">
   </form>
 
 </section>
