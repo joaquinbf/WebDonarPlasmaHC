@@ -2,7 +2,7 @@
 
 const cuestionario = [
 	{
-		pregunta: "Cual es tu edad?",
+		pregunta: "¿Cual es tu edad?",
 		tipo_respuesta: "num",
 		justificacion_ante_respuesta_invalida: "Lamentablemente, la edad minima para donar es mayor a 18 excepto que tenga entre 16 y 18, deberá tener una autorización escrita del responsable legal",
 		validar_respuesta: function(edad) {
@@ -10,7 +10,7 @@ const cuestionario = [
 		},
 	},
 	{
-		pregunta: "Cual es tu peso?",
+		pregunta: "¿Cual es tu peso?",
 		tipo_respuesta: "num",
 		justificacion_ante_respuesta_invalida: "Lamentablemente, por cuestiones de salud, el peso minimo es de 50kg",
 		validar_respuesta: function(peso) {
@@ -34,15 +34,6 @@ const cuestionario = [
 			"Luego de la donación no puede someterse a ese tipo de actividad por riesgo de lipotimia o sincope post donación. Caso contrario, no podrá donar ya que puede ser causa de accidente",
 		validar_respuesta: function(respuesta) {
 			return respuesta === "no";
-		},
-	},
-	{
-		pregunta: "¿Se siente bien y “sano” hoy?",
-		tipo_respuesta: "bin",
-		justificacion_ante_respuesta_invalida:
-			"Lamentablemente, por cuestiones de salud, se tiene que sentir bien",
-		validar_respuesta: function(respuesta) {
-			return respuesta === "si";
 		},
 	},
 	{
