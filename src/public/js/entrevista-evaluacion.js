@@ -48,7 +48,7 @@ class Entrevista {
       if (idPregunta + 1 < this.preguntas.length) {
         this.preguntas[idPregunta + 1].preguntar();
       } else {
-        window.location.href = "/agregar_donador";
+        window.location.href = "/donador/agregar";
       }
     } else {
       this.preguntas[idPregunta].justificar();
