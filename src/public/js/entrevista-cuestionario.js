@@ -6,7 +6,7 @@ const cuestionario = [
 		tipo_respuesta: "num",
 		justificacion_ante_respuesta_invalida: "Lamentablemente, la edad minima para donar es mayor a 18 excepto que tenga entre 16 y 18, deberá tener una autorización escrita del responsable legal",
 		validar_respuesta: function(edad) {
-			return edad > 18;
+			return edad > 17;
 		},
 	},
 	{
