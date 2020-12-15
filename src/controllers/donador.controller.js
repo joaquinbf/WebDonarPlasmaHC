@@ -58,7 +58,17 @@ rutaDonador.eliminarDonador = function (req, res) {
   res.send('Donador Eliminado');
 };
 
-rutaDonador.actualizarDonador = function (req, res) {
-  res.send('Donador Actualizado');
+rutaDonador.actualizarDonador = async function (req, res) {
+  try {
+    const idDonador = req.params.id;
+    const { checkContactado } = req.body;
+    const contactado = checkContactado === 'on';
+    await Donador.findByIdAndUpdate(idDonador, { contactado });
+    req.flash('mensaje', 'El donador fue actualizado');
+    res.redirect('/donador/donadores');
+  } catch (error) {
+    req.flash('error', 'Hubo un problema al actualizar la información')
+    res.redirect('/');
+  }
 };
 module.exports = rutaDonador;

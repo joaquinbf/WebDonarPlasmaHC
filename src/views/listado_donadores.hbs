@@ -1,40 +1,47 @@
-
 <section class="container section-pagina">
     <h2>Listado de donadores</h2>
-  <table class="table">
-    <thead>
-        <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Correo electronico</th>
-      <th scope="col">Tipo donador</th>
-      <th scope="col">Fue contactado</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each donadores}}
-        <tr>
-            <td>
-                {{nombre}}
-            </td>
-            <td>
-                {{apellido}}
-            </td>
-            <td>
-                {{telefono}}
-            </td>
-            <td>
-                {{email}}
-            </td>
-            <td>
-                {{tipo_donador}}
-            </td>
-            <td>
-              {{contactado}}
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+    <div class="overflow-auto">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo electronico</th>
+                    <th scope="col">Tipo donador</th>
+                    <th scope="col">Fue contactado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each donadores}}
+                <tr>
+                    <td>
+                        {{nombre}}
+                    </td>
+                    <td>
+                        {{apellido}}
+                    </td>
+                    <td>
+                        {{telefono}}
+                    </td>
+                    <td>
+                        {{email}}
+                    </td>
+                    <td>
+                        {{tipo_donador}}
+                    </td>
+                    <td>
+                        <form action="/donador/actualizar/{{_id}}?" method="POST">
+                            <div class="form-check">
+                                <input type="checkbox" name="checkContactado" id="checkContactado" {{#if contactado}}
+                                    checked {{/if}} onchange="this.form.submit()">
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </section>
