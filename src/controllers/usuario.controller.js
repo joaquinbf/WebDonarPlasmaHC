@@ -55,6 +55,9 @@ rutaUsuario.agregarUsuario = async function (req, res) {
   if (!password2) {
     errores.push({ text: 'Porfavor, confirmar contraseña' });
   }
+  if (password != password2) {
+    errores.push({ text: 'Las constraseñas no coinciden' });
+  }
 
   if (errores.length > 0) {
     res.render('/usuario/renderAgregarUsuario', { errores });
@@ -63,14 +66,16 @@ rutaUsuario.agregarUsuario = async function (req, res) {
       nombre,
       apellido,
       email,
-      user,
       password,
+      user,
     });
 
     nuevoUsuario.password = await nuevoUsuario.encriptarPassword(
-      usuario.password
+      nuevoUsuario.password
     );
     await nuevoUsuario.save();
+    req.flash('mensaje', 'El usuario se agrego exitosamente.');
+    res.redirect('/');
   }
 };
 
