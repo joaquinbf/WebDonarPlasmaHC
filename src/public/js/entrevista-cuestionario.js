@@ -138,12 +138,4 @@ const cuestionario = [
 			return respuesta === "si";
 		},
 	},
-	{
-		pregunta: "¿Ha tomado aspirinas o analgésicos?",
-		tipo_respuesta: "bin",
-		justificacion_ante_respuesta_invalida: "NO SE SABE",
-		validar_respuesta: function(respuesta) {
-			return respuesta === "si";
-		},
-	},
 ];

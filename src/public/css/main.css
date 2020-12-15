@@ -32,7 +32,7 @@ header {
 /* seccion principal */
 .section-principal {
   background-color: var(--violeta);
-  height: 60vh;
+  height: min(40vh);
   display: flex;
   justify-content: space-between;
   align-items: center;
