@@ -15,43 +15,46 @@
 
 <body>
   <header class="container-fluid navbar-dark">
-    <nav class="navbar navbar-expand-fluid container">
+    <nav class="navbar navbar-expand-lg container">
       <a href="/" class=" navbar-brand nav-link text-light">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <ul class="nav">
-        {{#if usuario}}
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/donador/donadores">Listado de donadores</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/usuario/agregar">Agregar nuevos usuarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/usuario/cerrarSesion">Cerrar Sesion</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link text-light"
-          href= "#section-video-donaplasma">¿Como se dona Plasma?
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light"
-          href="#section-ley">¿Conocias la ley de donación de plasma?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light"
-          href="#section-contacto"> ¿Queres que te contactemos? </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#section-condiciones">Condiciones basicas para ser donador</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#section-material">Material para compartir</a>
-        </li>
-        {{/if}}
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          {{#if usuario}}
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/donador/donadores">Listado de donadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/usuario/agregar">Agregar nuevos usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/usuario/cerrarSesion">Cerrar Sesion</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#section-video-donaplasma">¿Como se dona Plasma?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#section-ley">¿Conocias la ley de donación de plasma?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#section-contacto"> ¿Queres que te contactemos? </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#section-condiciones">Condiciones basicas para ser donador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#section-material">Material para compartir</a>
+          </li>
+          {{/if}}
 
-      </ul>
+        </ul>
+      </div>
     </nav>
   </header>
 
