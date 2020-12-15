@@ -49,7 +49,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -58,7 +58,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -67,7 +67,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -77,7 +77,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -86,7 +86,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -96,7 +96,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -105,7 +105,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -114,7 +114,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 			{
@@ -123,7 +123,7 @@ const cuestionario = [
 				justificacion_ante_respuesta_invalida:
 					"Los que tienen propiedades teratogenas o que alteran la función plaquetar en el caso de la donación de plaquetas por aferesis deben ser excluidos  temporalmente durante un periodo de tiempo que estará en función de las propiedades farmaco-cinéticas del medicamento",
 				validar_respuesta: function(respuesta) {
-					return respuesta === "si";
+					return respuesta === "no";
 				},
 			},
 		]
@@ -135,7 +135,7 @@ const cuestionario = [
 		justificacion_ante_respuesta_invalida:
 			"Lamentablemente, no podrá donar si consume/consumió las siguientes medicaciones: -Desde la última dosis de Isotretinoina (Roacutan), exclusión por un (1) mes. -Tratamiento con Acitretina (NeoTigasón), exclusión por tres (3) años",
 		validar_respuesta: function(respuesta) {
-			return respuesta === "si";
+			return respuesta === "no";
 		},
 	},
 ];

@@ -14,4 +14,8 @@ input {
   background-color: var(--violeta);
 }
 
+.btn-enviar:hover {
+  color: var(--rosa);
+}
+
 
